@@ -1,0 +1,13 @@
+.row
+  .col-lg-2
+    select.form-control.years(hm-on-change='onMonthChange')
+      each year in [2014, 2015, 2016]
+        option(value=year) #{year}
+  .col-lg-3
+    select.form-control.months(hm-on-change='onMonthChange')
+      each month, i in months
+        option(value=i) #{month}
+  .col-lg-2
+    button.btn.btn-info.load-this-month(hm-on-click='onLoadThisMonth') Actual
+  .col-lg-2
+    button.btn.btn-danger.new-month(hm-on-click='onNewMonth', hm-hide='monthExists') Nuevo mes

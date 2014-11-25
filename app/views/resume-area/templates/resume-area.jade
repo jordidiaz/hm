@@ -1,0 +1,39 @@
+.resume-area(hm-show='resumeAvailable')
+  .row
+    .col-lg-5
+      | Total cuenta
+    .col-lg-5
+      input.form-control.total-account.pull-right.text-right(type="number", min='0', hm-value='model:totalAccount | currency', hm-on-change="updateResumes")
+  .row
+    .col-lg-5
+      | Metálico
+    .col-lg-5
+      input.form-control.cash.pull-right.text-right(type="number", min='0', hm-value='model:cash | currency', hm-on-change="updateResumes")
+  .row
+    .col-lg-5
+      | Total gastos
+    .col-lg-5
+      .total-charges.pull-right
+        | {totalCharges | currency}
+  .row
+    .col-lg-5
+      | Resta
+    .col-lg-5
+      .total-difference.pull-right
+        | {totalDifference | currency}
+  .row
+    .col-lg-5
+      | Semanas restantes
+    .col-lg-5
+      input.form-control.weeks-left.pull-right.text-right(type="number", min='0', hm-value='model:weeksLeft | currency', hm-on-change="updateResumes")
+  .row
+    .col-lg-5
+      | Por semana
+    .col-lg-5
+      .per-week.pull-right
+        | {perWeek | currency}
+.no-resume-stub(hm-hide='resumeAvailable')
+  .row
+    .col-lg-6
+      h4
+        | No hay gastos para este mes

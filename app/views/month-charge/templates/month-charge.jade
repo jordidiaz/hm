@@ -1,0 +1,7 @@
+.list-group-item
+  | {model:name}
+  i.fa.fa-edit.fa-2x.pull-right.edit(hm-on-click="showMonthChargeEdit")
+  span.badge.amount
+    | {model:amount}
+  i.fa.fa-check-square-o.fa-2x.pull-left.paid(hm-if="model:paid", hm-on-click="togglePaid")
+  i.fa.fa-square-o.fa-2x.pull-left.paid(hm-unless="model:paid", hm-on-click="togglePaid")

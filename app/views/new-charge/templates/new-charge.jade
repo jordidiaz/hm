@@ -1,0 +1,8 @@
+.row
+  .col-lg-4
+    input.form-control(placeholder='Gasto...', hm-value="chargeData.name")
+  .col-lg-3
+    input.form-control.text-right(type='number', min='0', hm-value="chargeData.amount | currency")
+  .col-lg-2
+    button.btn.btn-info.save(hm-hide="editMode", hm-on-click="saveCharge") Guardar
+    button.btn.btn-info.edit(hm-show="editMode", hm-on-click="editCharge") Editar

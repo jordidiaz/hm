@@ -1,0 +1,17 @@
+.edit-modal.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
+  .modal-dialog.modal-sm
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal')
+          span(aria-hidden='true') ×
+          span.sr-only Cerrar
+        h4.modal-title Editar gasto mensual
+      .modal-body
+        .row
+          .col-lg-6
+            input.form-control(placeholder='Gasto...', hm-value="model:name")
+          .col-lg-6
+            input.form-control.text-right(type='number', min='0', hm-value="model:amount | currency")
+      .modal-footer
+        button.btn.btn-danger(type='button', hm-on-click="deleteMonthCharge") Borrar
+        button.btn.btn-primary(type='button', hm-on-click="saveMonthCharge") Guardar

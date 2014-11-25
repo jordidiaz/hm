@@ -1,0 +1,8 @@
+.list-group-item(hm-on-click="selectCharge", hm-class-active="selected")
+  | {model:name}
+  i.fa.fa-trash-o.fa-2x.pull-right.delete(hm-on-click="deleteCharge", hm-show="editMode")
+  span.badge.amount
+    | {model:amount}
+  i.fa.fa-plus.fa-2x.pull-left.add-to-month(hm-on-click="addToMonth")
+  i.fa.fa-star.fa-2x.pull-left.monthly(hm-if="model:monthly", hm-on-click="toggleMonthly")
+  i.fa.fa-star-o.fa-2x.pull-left.monthly(hm-unless="model:monthly", hm-on-click="toggleMonthly")
