@@ -56,7 +56,7 @@ module.exports = class ResumeAreaView extends View
     # diferencia
     @totalDifference = @model.get('totalAccount') + @model.get('cash') - @totalCharges
     # por semana
-    weeksLeft = @currencyFormatter(@, @model.get('weeksLeft'))
+    weeksLeft = @currencyFormatter.call(@, @model.get('weeksLeft'))
     if weeksLeft > 0
       @perWeek = @currencyFormatter.call(@, @totalDifference / weeksLeft)
     else
