@@ -12,10 +12,14 @@ module.exports = class Couch
   port: 5984
   # db name
   database: null
+  # db username
+  username: null
+  # db password
+  password: null
 
   constructor: (options) ->
     _.extend @, options
-    @db = new PouchDB @protocol+'://'+@host+':'+@port+'/'+@database
+    @db = new PouchDB @protocol+'://'+@username+':'+@password+'@'+@host+':'+@port+'/'+@database
 
   get: (id) ->
     result = Q.defer()

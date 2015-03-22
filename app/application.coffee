@@ -28,6 +28,8 @@ module.exports = class Application extends Chaplin.Application
     new StorageManager
       host: constants.storage.host
       database: constants.storage.database
+      username: constants.storage.username
+      password: constants.storage.password
 
   _initDataBinding: ->
     new DataBindingManager
