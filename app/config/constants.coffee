@@ -1,4 +1,5 @@
 module.exports =
   storage:
-    host: '127.0.0.1'
+    host: 'syspunch.cloudant.com'
     database: 'hm'
+    username: 'syspunch'

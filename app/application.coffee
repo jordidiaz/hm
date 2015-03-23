@@ -10,6 +10,12 @@ constants           = require './config/constants'
 
 module.exports = class Application extends Chaplin.Application
 
+  password: null
+
+  constructor: (options) ->
+    @password = options.password
+    super
+
   start: ->
     @_initLocale()
     @_initAppModules()
@@ -28,6 +34,8 @@ module.exports = class Application extends Chaplin.Application
     new StorageManager
       host: constants.storage.host
       database: constants.storage.database
+      username: constants.storage.username
+      password: @password
 
   _initDataBinding: ->
     new DataBindingManager
